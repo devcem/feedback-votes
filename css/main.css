@@ -1,0 +1,26 @@
+body{
+	margin-top: 30px;
+    font-size: 16px;
+}
+
+.logo{
+    height: 100%;
+    float: left;
+    margin-right: 10px;
+}
+
+.suggestion .label{
+    margin-right: 23px;
+    float: left;
+    font-size: 22px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.suggestion{
+    border-bottom: solid 1px #ddd;
+}
+
+.suggestion p{
+    color: #999;
+}

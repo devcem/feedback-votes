@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tribals Feedback</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+                        <img class="logo" src="images/logo.png">
+                        <b>Tribals.io Feedback</b>
+                    </a>
+                    
+				</div>
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="https://alpha.tribals.io">Go back to Game <span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                </ul>
+			</nav>
+        </div>
+        <div class="container">
+            <div class="col-md-4">
+                <p>Tribals.io is a first-person multiplayer survival game for the browser. Explore land, start clans with friends, and raid bases.</p>
+                <br>
+                
+                <div v-if="alert" class="alert alert-danger"><span class="glyphicon glyphicon-remove-circle"></span> {{alert}}</div>
+
+                <form action="javascript:;" v-on:submit="sendSuggestion()" role="form">
+                    <h4><span class="glyphicon glyphicon-comment"></span> Add Your Suggestion</h4>
+                    <p>Please any feedback, suggestion or bug report to our feedback system. You can also see similar posts.</p>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input v-model="form.title" type="text" class="form-control" placeholder="Brief explanation">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea v-model="form.description" class="form-control" placeholder="Explain your suggestion"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Submit</button>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <p v-if="suggestions.length == 0">Please wait, loading suggestions...</p>
+                <div v-for="suggestion in suggestions" class="suggestion">
+                    <span v-on:click="voteSuggestion(suggestion)" class="label label-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        {{suggestion.votes}}
+                    </span>
+
+                    <h3>{{suggestion.title}}</h3>
+                    <p>{{suggestion.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
