@@ -71,7 +71,7 @@ var app = new Vue({
             })
             .then(function(data){
                 if(data.success){
-                    self.showAlert('Thanks for your suggestion!');
+                    self.showAlert(data.message);
                 }
             });
         },
