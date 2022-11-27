@@ -71,6 +71,9 @@ var app = new Vue({
             })
             .then(function(data){
                 if(data.success){
+                    app.form.title = '';
+                    app.form.description = '';
+                    
                     self.showAlert(data.message);
                 }
             });
