@@ -52,7 +52,7 @@
                         {{suggestion.votes}}
                     </span>
 
-                    <h3>{{suggestion.title}}</h3>
+                    <h3>{{suggestion.title}} <img v-if="suggestion.implemented && suggestion.implemented != '0'" src="images/check.svg"></h3>
                     <p>{{suggestion.description}}</p>
                 </div>
             </div>

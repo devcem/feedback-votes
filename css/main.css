@@ -3,6 +3,12 @@ body{
     font-size: 16px;
 }
 
+h3 img{
+    width: 22px;
+    margin-left: 5px;
+    margin-top: -3px;
+}
+
 .logo{
     height: 100%;
     float: left;
